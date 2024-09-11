@@ -27,3 +27,6 @@ Estrutura de Repetição
 
  ##Operadores:
  = Operação de atribuição de valor
+ +Operador de Contatenação ( Juntando dados)
+
+ Uso do ponto final : Para onde está executando
