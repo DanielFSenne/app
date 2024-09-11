@@ -5,6 +5,14 @@ let meta = {
     checked :false,
     ischecked:() => {}
 }
+let meta = [
+    meta, {
+       value : "Malhar sempre que possível",
+       checked : false 
+    }
+]
+
+
 
 console.log()
 meta.ischecked()
