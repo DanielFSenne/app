@@ -20,3 +20,10 @@ Estrutura de Repetição
  Coleta de dados
  Processar Informações
  Apresentar informações para o usuário
+
+ ##Escopo e Variaveis Globais e locais;
+
+ Conteúdos escritos dentro de chaves : Local
+
+ ##Operadores:
+ = Operação de atribuição de valor
