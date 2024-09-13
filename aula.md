@@ -34,3 +34,7 @@ Estrutura de Repetição
  ##Estrutura de Repetição
 
  [x while]
+
+ ##Condicionais
+
+ []Switch
