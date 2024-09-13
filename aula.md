@@ -30,3 +30,7 @@ Estrutura de Repetição
  +Operador de Contatenação ( Juntando dados)
 
  Uso do ponto final : Para onde está executando
+
+ ##Estrutura de Repetição
+
+ [x while]
