@@ -29,6 +29,7 @@ Estrutura de Repetição
  = Operação de atribuição de valor
  +Operador de Contatenação ( Juntando dados)
 ==Operadores de Comparção
+... Spread opereator
 
  Uso do ponto final : Para onde está executando
 
