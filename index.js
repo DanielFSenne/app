@@ -18,6 +18,7 @@ const metasRealizadas =  async () => {
         message: 'Metas Realizadas',
         choices: [... realizadas]
     })
+}
     const metasAbertas = async() => {
         const abertas = metas.filter((meta) => {
             return meta.checked != true 
@@ -68,7 +69,7 @@ const listarMetas = async () => {
 
     console.log('Meta(s) marcadas como Conclúida(s)')
 }
-
+    const start = async() => {
     while(true){
         
 

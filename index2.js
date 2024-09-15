@@ -34,6 +34,28 @@ const metasAbertas = async () => {
     });
 };
 
+const deletarMetas = async () => {
+const mestasDesmarcadas = metas.map((meta)=>{
+        return {value : meta.value, checked: false}
+    })
+    const itemsADeletar = await checkbox({
+        message: "Selecione itens para deletar",
+        choices: metas.map(meta => ({name: meta.value, value: meta.value})),
+        instructions: false,
+    }); 
+    if(itemsADeletar.length == 0) {
+        console.log('Nenhum item para deletar')
+    }
+
+    itemsADeletar.forEach((item) => {
+        metas = metas.filter((meta) => {
+            return meta.value != item
+        })
+        console.log('Metas Deletadas')
+    })
+    //nnoconsole.log(respostas)  
+}
+
 const cadastrarMeta = async () => {
     const novaMeta = await input({message: "Digite a meta:"});
 
@@ -74,6 +96,7 @@ const main = async () => {
                 { name: "Listar metas", value: "listar" },
                 { name: "Metas realizadas", value: "realizadas" },
                 { name: "Metas abertas", value: "abertas" },
+                { name: "Deletar metas,", value : "deletar"},
                 { name: "Sair", value: 'sair' }
             ]
         });
@@ -92,6 +115,9 @@ const main = async () => {
             case "abertas":
                 await metasAbertas();
                 break;
+            case "deletar":
+                await deletarMetas();
+                break
             case "sair":
                 console.log('Até a próxima!');
                 return;
