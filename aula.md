@@ -28,6 +28,7 @@ Estrutura de Repetição
  ##Operadores:
  = Operação de atribuição de valor
  +Operador de Contatenação ( Juntando dados)
+==Operadores de Comparção
 
  Uso do ponto final : Para onde está executando
 
@@ -38,3 +39,13 @@ Estrutura de Repetição
  ##Condicionais
 
  []Switch
+ []if/else
+
+ ## Módulos em node.js
+
+ importação de módulos
+ Bibliotecas 'inquirier' para crair prompts interativos
+
+ ##Programçaõ assícrona(acontecimentos sincronizados) e promisses:
+
+ Uso das funções assícronas (async/await)
