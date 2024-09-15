@@ -6,12 +6,15 @@ let meta = {
 };
 let metas = [meta];
 
+
+let mensagem = "Bem-Vindo ao apps de Metas";
+
 const metasRealizadas = async () => {
     const realizadas = metas.filter((meta) => {
         return meta.checked;
     });
     if (realizadas.length == 0) {
-        console.log('Não existem metas realizadas :(');
+        mensagem = 'Não existem metas realizadas :(';
         return;
     }
     await select({
@@ -25,7 +28,7 @@ const metasAbertas = async () => {
         return !meta.checked;
     });
     if (abertas.length == 0) {
-        console.log('Não existem metas abertas! (:');
+        mensagem = 'Não existem metas abertas! (:';
         return;
     }
     await select({
@@ -44,28 +47,37 @@ const mestasDesmarcadas = metas.map((meta)=>{
         instructions: false,
     }); 
     if(itemsADeletar.length == 0) {
-        console.log('Nenhum item para deletar')
+        mensagem = 'Nenhum item para deletar'
     }
 
     itemsADeletar.forEach((item) => {
         metas = metas.filter((meta) => {
             return meta.value != item
         })
-        console.log('Metas Deletadas')
+        mensagem = 'Metas Deletadas'
     })
-    //nnoconsole.log(respostas)  
+    //console.log(respostas)  
 }
 
+const mostrarMensagem = () => {
+    console.clear();
+    if(mensagem != "") {
+        console.log(mensagem)
+        console.log("")
+        mensagem = ""
+    }
+}
 const cadastrarMeta = async () => {
     const novaMeta = await input({message: "Digite a meta:"});
 
     if (novaMeta.length == 0) {
-        console.log('A meta não pode ser vazia');
+        mensagem = 'A meta não pode ser vazia';
+        mensagem = "Meta Cadastrada com sucesso"
         return;
     }
 
     metas.push({ value: novaMeta, checked: false });
-    console.log('Meta cadastrada com sucesso!');
+    mensagem = 'Meta cadastrada com sucesso!';
 };
 
 const listarMetas = async () => {
@@ -76,7 +88,7 @@ const listarMetas = async () => {
     });
     
     if (respostas.length == 0) {
-        console.log('Nenhuma meta selecionada');
+        mensagem = 'Nenhuma meta selecionada';
         return;
     }
 
@@ -84,11 +96,13 @@ const listarMetas = async () => {
         m.checked = respostas.includes(m.value);
     });
 
-    console.log('Meta(s) marcadas como Concluída(s)');
+    mensagem ='Meta(s) marcadas como Concluída(s)'
 };
 
 const main = async () => {
     while (true) {
+    mostrarMensagem()
+
         const opcao = await select({
             message: "Menu>",
             choices: [
